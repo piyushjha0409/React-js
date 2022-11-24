@@ -1,11 +1,11 @@
 import React from 'react'
 import GuestGreetings from './GuestGreetings';
-import userGreetings from './userGreetings';
+import UserGreetings from './UserGreetings';
 const Greetings = (props) => {
   const isLoggedIn = props.isLoggedIn;
 
   if(isLoggedIn){
-    return <userGreetings />
+    return <UserGreetings />
   }else{
     return <GuestGreetings />
   }
