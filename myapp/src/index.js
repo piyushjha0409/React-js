@@ -3,22 +3,54 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-function Clock(props){
-  return(
-    <div>
-      <h1>Hello World!</h1>
-      <h2>It is {props.date.toLocaleTimeString()}</h2>
-    </div>
-  )
-}
-function tick(){
-  root.render(<Clock date={new Date()} />);
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// function Clock(props){
+//   return(
+//     <div>
+//       <h1>Hello World!</h1>
+//       <h2>It is {props.date.toLocaleTimeString()}</h2>
+//     </div>
+//   )
+// }
+// function tick(){
+//   root.render(<Clock date={new Date()} />);
+// }
+
+// setInterval(tick, 1000);
+
+class Clock extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {date: new Date()}
+  }
+
+  componentDidMount(){
+    this.timerID = setInterval(() => this.tick(), 1000
+    )
+  }
+
+  componentWillUnmount(){
+  clearInterval(this.timerID);
+  }
+
+//function for the ticking 
+  tick(){
+    this.setState({
+      date: new Date()
+    });
+  }
+  
+  render(){
+    return(
+      <div>
+        <h1>Hello World!</h1>
+        <h2>It is {this.state.date.toLocaleTimeString()}</h2>
+      </div>
+    );
+  }
 }
 
-setInterval(tick, 1000);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<Clock />
+)
 reportWebVitals();
