@@ -21,12 +21,24 @@ import reportWebVitals from './reportWebVitals';
 class Clock extends React.Component{
   constructor(props){
     super(props);
-    this.state = {date: new Date()}
+    this.state = {
+      posts: [],
+      comments: [] //these are some independent variables 
+    };
   }
 
   componentDidMount(){
-    this.timerID = setInterval(() => this.tick(), 1000
-    )
+   fetchPosts().then(response =>{
+    this.setState({
+      posts: response.posts
+    });
+   });
+
+   fetchComments().then(response =>{
+    this.setState({
+      comments: response.comments
+   })
+   })
   }
 
   componentWillUnmount(){
@@ -36,7 +48,7 @@ class Clock extends React.Component{
 //function for the ticking 
   tick(){
     this.setState({
-      date: new Date()
+    
     });
   }
   
@@ -51,6 +63,6 @@ class Clock extends React.Component{
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(<Clock />
-)
+root.render(<Clock />)
+
 reportWebVitals();
