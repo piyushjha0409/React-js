@@ -1,10 +1,10 @@
-import Clock from '../src/components/Clock'
+import NameForm from '../src/components/NameForm'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-        <Clock date={new Date()} />
+       <NameForm />
     </div>
   );
 }

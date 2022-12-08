@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+import NameForm from '../src/components/NameForm'
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));
 // function Clock(props){
@@ -18,51 +19,51 @@ import reportWebVitals from './reportWebVitals';
 
 // setInterval(tick, 1000);
 
-class Clock extends React.Component{
-  constructor(props){
-    super(props);
-    this.state = {
-      posts: [],
-      comments: [] //these are some independent variables 
-    };
-  }
+// class Clock extends React.Component{
+//   constructor(props){
+//     super(props);
+//     this.state = {
+//       posts: [],
+//       comments: [] //these are some independent variables 
+//     };
+//   }
 
-  componentDidMount(){
-   fetchPosts().then(response =>{
-    this.setState({
-      posts: response.posts
-    });
-   });
+//   componentDidMount(){
+//    fetchPosts().then(response =>{
+//     this.setState({
+//       posts: response.posts
+//     });
+//    });
 
-   fetchComments().then(response =>{
-    this.setState({
-      comments: response.comments
-   })
-   })
-  }
+//    fetchComments().then(response =>{
+//     this.setState({
+//       comments: response.comments
+//    })
+//    })
+//   }
 
-  componentWillUnmount(){
-  clearInterval(this.timerID);
-  }
+//   componentWillUnmount(){
+//   clearInterval(this.timerID);
+//   }
 
-//function for the ticking 
-  tick(){
-    this.setState({
+// //function for the ticking 
+//   tick(){
+//     this.setState({
     
-    });
-  }
+//     });
+//   }
   
-  render(){
-    return(
-      <div>
-        <h1>Hello World!</h1>
-        <h2>It is {this.state.date.toLocaleTimeString()}</h2>
-      </div>
-    );
-  }
-}
+//   render(){
+//     return(
+//       <div>
+//         <h1>Hello World!</h1>
+//         <h2>It is {this.state.date.toLocaleTimeString()}</h2>
+//       </div>
+//     );
+//   }
+// }
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(<Clock />)
+root.render(<NameForm />)
 
 reportWebVitals();
