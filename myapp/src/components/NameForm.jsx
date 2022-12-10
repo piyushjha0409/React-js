@@ -3,10 +3,12 @@ import React from "react";
 class NameForm extends React.Component {
     constructor(props) {
       super(props);
-      this.state = {value: 'Please write an essay about favorite DOM element and there will be much more to it'};
+      this.state = {
+        isGoing: true,
+        numberOfGuests: 2
+      };
   
-      this.handleChange = this.handleChange.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
+      this.handleInputChange = this.handleInputChange.bind(this);
     }
   
     handleChange(event) {
