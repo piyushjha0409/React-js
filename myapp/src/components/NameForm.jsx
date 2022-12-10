@@ -11,24 +11,46 @@ class NameForm extends React.Component {
       this.handleInputChange = this.handleInputChange.bind(this);
     }
   
-    handleChange(event) {
-      this.setState({value: event.target.value});
-    }
+    // handleChange(event) {
+    //   this.setState({value: event.target.value});
+    // }
   
-    handleSubmit(event) {
-      alert('A name was submitted: ' + this.state.value);
-      event.preventDefault();
-    }
+    // handleSubmit(event) {
+    //   alert('A name was submitted: ' + this.state.value);
+    //   event.preventDefault();
+    // }
   
+    handleInputChange(event){
+       const target = event.target
+       const value = target.type === 'checkbox' ? target.checked : target.value;
+       const name = target.name 
+
+       this.setState({
+        [name] : value
+       })
+
+    }
     render() {
       return (
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Essay:
-            <textarea  value={this.state.value} onChange={this.handleChange} />
-          </label>
-          <input type="submit" value="Submit" />
-        </form>
+       <form>
+        <label>
+          Is going:
+          <input
+            name="isGoing"
+            type="checkbox"
+            checked={this.state.isGoing}
+            onChange={this.handleInputChange} />
+        </label>
+        <br />
+        <label>
+          Number of guests:
+          <input
+            name="numberOfGuests"
+            type="number"
+            value={this.state.numberOfGuests}
+            onChange={this.handleInputChange} />
+        </label>
+      </form>
       );
     }
   }
