@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import NameForm from '../src/components/NameForm'
-
+import Calculator from './components/Calculator';
 // const root = ReactDOM.createRoot(document.getElementById('root'));
 // function Clock(props){
 //   return(
@@ -64,6 +63,6 @@ import NameForm from '../src/components/NameForm'
 // }
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(<NameForm />)
+root.render(<Calculator />)
 
 reportWebVitals();
