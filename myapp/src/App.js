@@ -1,10 +1,11 @@
 import NameForm from '../src/components/NameForm'
 import './App.css';
+import Calculator from './components/calculator';
 
 function App() {
   return (
     <div className="App">
-       <NameForm />
+       <Calculator />
     </div>
   );
 }
