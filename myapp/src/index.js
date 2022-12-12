@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Calculator from './components/Calculator';
+import OuterClickExample from './components/OuterClickExample';
 // const root = ReactDOM.createRoot(document.getElementById('root'));
 // function Clock(props){
 //   return(
@@ -63,6 +63,6 @@ import Calculator from './components/Calculator';
 // }
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(<Calculator />)
+root.render(<OuterClickExample />)
 
 reportWebVitals();
