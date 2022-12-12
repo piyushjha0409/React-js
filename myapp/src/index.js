@@ -2,7 +2,9 @@ import React, {Fragment} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import OuterClickExample from './components/OuterClickExample';
+// import OuterClickExample from './components/OuterClickExample';
+const OuterClickExample = React.lazy(() =>  import('./components/OuterClickExample'))
+
 // const root = ReactDOM.createRoot(document.getElementById('root'));
 // function Clock(props){
 //   return(

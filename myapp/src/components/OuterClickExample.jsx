@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Suspense} from "react";
 
 class OuterClickExample extends React.Component{
 
@@ -38,6 +38,7 @@ class OuterClickExample extends React.Component{
     }
     render(){
         return(
+            <Suspense fallback={<div>Loading...</div>}>
             <div ref={this.toggleContainer}>
                 <button onClick={this.onClickHandler}>Select Options</button>
                 {this.state.isOpen && (
@@ -48,6 +49,7 @@ class OuterClickExample extends React.Component{
                 </ul>
                 )}
             </div>
+            </Suspense>
         )
     }
 }
