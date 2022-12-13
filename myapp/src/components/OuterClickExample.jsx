@@ -14,8 +14,7 @@ class OuterClickExample extends React.Component{
         this.onClickOutsideHandler = this.onClickOutsideHandler.bind(this)
         
     }
-
-    
+   
     componentDidMount(){
         window.addEventListener('click', this.onClickOutsideHandler)
     }
