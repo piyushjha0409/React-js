@@ -1,15 +1,21 @@
+import React, {createContext} from 'react';
 import NameForm from '../src/components/NameForm'
 import './App.css';
-import Calculator from './components/calculator';
+import ComponentA from './components/context/ComponentA';
+
+const LastName = createContext() 
 
 function App() {
   return (
-    <div className="App">
-       <Calculator />
-    </div>
+    <>
+    <LastName.Provider value={"jha"}>
+      <ComponentA />
+    </LastName.Provider>
+    </>
   );
 }
 
 setInterval(App, 100);
 
 export default App;
+export {LastName}

@@ -1,9 +1,11 @@
 import React, {Fragment} from 'react';
 import ReactDOM from 'react-dom/client';
+import App from './App';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-// import OuterClickExample from './components/OuterClickExample';
-const OuterClickExample = React.lazy(() =>  import('./components/OuterClickExample'))
+import ComponentA from './components/context/ComponentA';
+
+
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));
 // function Clock(props){
@@ -65,6 +67,7 @@ const OuterClickExample = React.lazy(() =>  import('./components/OuterClickExamp
 // }
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(<OuterClickExample />)
+root.render(<ComponentA />)
 
 reportWebVitals();
+
