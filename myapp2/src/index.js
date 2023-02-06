@@ -5,9 +5,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {configureStore} from "@reduxjs/toolkit"
 import { Provider } from "react-redux"
+import userReducer from "./Features/user"
 
 const store = configureStore({
-  reducer: {}
+  reducer:{
+    user: userReducer
+  }
 })
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
