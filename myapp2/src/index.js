@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {configureStore} from "@reduxjs/toolkit"
-import { Provider } from "rea"
+import { Provider } from "react-redux"
 
 const store = configureStore({
   reducer: {}
