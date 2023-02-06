@@ -1,5 +1,4 @@
 import React, {createContext} from 'react';
-import NameForm from '../src/components/NameForm'
 import './App.css';
 import ComponentA from './components/context/ComponentA';
 
