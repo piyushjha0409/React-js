@@ -1,18 +1,25 @@
 import React from 'react'
 import {createSlice} from "@reduxjs/toolkit"
 
-const userSlice = createSlice({
+const initialState = {name:"", age:0, email:""}
+
+export const userSlice = createSlice({
     name:"user",
-    initialState: { value: {name: "", age: 0, email:" "} },
+    initialState: { value: initialState },
     reducers: {
-        
-    }
+        login: (state, action)=>{
+          state.value = action.payload
+        },
 
+        logout:(state)=>{
+          state.value = initialState
+        }
+    },
+   
 })
-const user = () => {
-  return (
-    <div>user</div>
-  )
-}
 
-export default user
+export const { login , logout } = userSlice.actions;
+
+
+//wanna access this reducer in our index.js
+export default userSlice.reducer
