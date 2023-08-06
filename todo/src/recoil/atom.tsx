@@ -1,4 +1,4 @@
-import { atom } from "recoil";
+import { atom, selector} from "recoil";
 
 export interface Todo {
     id: number,
@@ -11,3 +11,7 @@ export const todoListState = atom<Todo[]>({
     default:[]
 })
 
+export const todoListFilterState = atom({
+    key: 'todoListFilterState',
+    default: 'ALL'
+})

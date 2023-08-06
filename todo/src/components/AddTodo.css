@@ -1,0 +1,16 @@
+.add-comp{
+    display: flex;
+    justify-content: center;
+        
+}
+
+.add-comp button{
+  margin: 2px 12px;
+  padding: 10px 12px;
+  color: aqua;
+}
+
+.prompt {
+    width: 23rem;
+    text-align: center;
+}

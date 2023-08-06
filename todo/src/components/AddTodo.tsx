@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import { todoListState } from '../recoil/atom'
 import { useRecoilValue, useSetRecoilState, } from 'recoil'
+import "./AddTodo.css"
+
 type Props = {}
 
 const AddTodo = (props: Props) => {
@@ -20,8 +22,8 @@ const AddTodo = (props: Props) => {
     }
 
   return (
-    <div>
-        <input type='text' placeholder='Enter the task' value={Inputvalue} onChange={(e) => setInputValue(e.target.value)} />
+    <div className='add-comp'>
+        <input type='text' className="prompt" placeholder='Enter the task' value={Inputvalue} onChange={(e) => setInputValue(e.target.value)} />
         <button onClick={handleAddTodo}>Add</button>
     </div>
   )
